@@ -44,6 +44,10 @@ export class ExpressServer extends Server {
     const userRepository = new UserRepository();
     const userService = new UserService(userRepository);
 
+    // register services
+    this.registerService('User', userService);
+
+    // register controllers
     this.registerController('User', new UserController(this, userService));
   }
 
