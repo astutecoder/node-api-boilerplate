@@ -4,7 +4,7 @@ import { Service } from './Service';
 
 export abstract class Server {
   Controllers: IDictionary<Controller<unknown>> = new Dictionary();
-  Services: IDictionary<Service<unknown>> = new Dictionary();
+  Services: IDictionary<any> = new Dictionary();
 
   abstract middlewares(): void;
   abstract start(): void;
@@ -14,7 +14,7 @@ export abstract class Server {
     this.Controllers.Add(name, controller);
   }
 
-  registerService(name: string, service: Service<unknown>) {
+  registerService(name: string, service: any) {
     this.Services.Add(name, service);
   }
 }
