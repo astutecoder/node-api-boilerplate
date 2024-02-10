@@ -5,5 +5,5 @@ export interface IRepository<T> {
   findById(id: string): Promise<T | null>;
   create(data: T): Promise<T | null>;
   update(id: string, data: Partial<T>): Promise<T | null>;
-  remove(id: string): Promise<boolean>;
+  remove(id: string): Promise<T | null>;
 }
