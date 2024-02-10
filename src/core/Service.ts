@@ -6,7 +6,7 @@ export abstract class Service<T> {
 
   abstract list(query?: Record<string, unknown>): Promise<IResponse<T[]>>;
   abstract get(id: string): Promise<IResponse<T | null>>;
-  abstract create(data: T): Promise<IResponse<T | null>>;
+  abstract create(data: Partial<T>): Promise<IResponse<T | null>>;
   abstract update(id: string, data: Partial<T>): Promise<IResponse<T | null>>;
-  abstract remove(id: string): Promise<IResponse<boolean>>;
+  abstract remove(id: string): Promise<IResponse<T | null>>;
 }
