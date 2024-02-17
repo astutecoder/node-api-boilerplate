@@ -1,10 +1,9 @@
 import { IRoute } from './IRoutes';
 import { Server } from './Server';
-import { Service } from './Service';
 
 export abstract class Controller<T> {
   routes: IRoute[] = [];
-  constructor(protected server: Server, public service?: Service<T>) {}
+  constructor(protected server: Server) {}
 
   protected abstract registerRoutes(): void;
 }
